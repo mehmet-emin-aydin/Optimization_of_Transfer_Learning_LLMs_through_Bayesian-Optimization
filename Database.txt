@@ -1,0 +1,8 @@
+# Tokenizer ve M0 modeli için kullanılan veriseti:
+https://drive.google.com/file/d/1-6Xdvn_R7LbPGpU3wzP2B-ZtYq54WV4K/view?usp=sharing
+
+#M1 modeli için kullanılan veriseti:
+https://drive.google.com/file/d/1lYxotjuIdYzOvm2eiMki8lj588v7guPJ/view?usp=sharing
+
+#M2 modeli için kullanılan veriseti:
+https://drive.google.com/file/d/1lYxotjuIdYzOvm2eiMki8lj588v7guPJ/view?usp=sharing
