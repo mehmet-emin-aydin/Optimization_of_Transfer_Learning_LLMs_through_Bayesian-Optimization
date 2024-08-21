@@ -1,0 +1,65 @@
+[ENG]
+
+1. We need to clean the dataset that we will use for training the model. -> "1.1_Data_Cleaning.py"
+
+2. We need to create the "Tokenizer" to convert the dataset into tokens for the model input. -> "1.2_Tokenizer.py"
+
+3. Depending on the device on which the model will be trained, the following steps should be followed:
+    3.1 If you want to train the model on a CPU, it is sufficient to specify torch.device("cpu").
+    3.2 If you want to train the model on a GPU, make sure that "cuda" is supported by the graphics card and follow these steps:
+        3.2.1 Install the "cudaToolkit" and "cuDNN" appropriate for your graphics card.
+        3.2.2 Ensure that you have the version of PyTorch compatible with the toolkit.
+        3.2.3 During model training, specify torch.device("cuda") and make sure that both the dataset and the model are loaded onto "cuda".
+
+4. As required by the project process, you should first obtain the M0 model. -> "2_Model_M0.py"
+
+5. Then, using the M0 model as the initial model:
+    5.1 Train the M1 model with the D1 dataset. -> "3.1_Model_M1.py"
+    5.2 Train the M2 model with the D2 dataset. -> "3.2_Model_M2.py"
+
+6. To perform the "Bayesian Optimization," which is the research topic of the project: -> "4_Bayesian_Optimization.py"
+    6.1 New models are obtained from the M1 and M2 models using the equation merged_weight = U*w1 + (1-U)*w2.
+    6.2 The success scores of these models are calculated with the D1Sub and D2Sub datasets, and the best model is saved.
+
+7. To move from linear search to grid search in optimization:
+    7.1 Train the M1 model with "D2Sub" to obtain "Model A". -> "5.1_Model_A-B-C.py"
+    7.2 Train the M2 model with "D1Sub" to obtain "Model B". -> "5.1_Model_A-B-C.py"
+    7.3 Train the M0 model with "D1Sub" + "D2Sub" to obtain "Model C". -> "5.1_Model_A-B-C.py"
+    7.4 Train the M1 model with "D1 + D2" to obtain "Model D". -> "5.2_Model_D.py"
+
+8. To evaluate the success score of the model obtained through optimization: -> "6_Success_Score_Calculation.py"
+    8.1 Calculate the "Top1 - Top5" scores of the M1, M2, and A-B-C models and check if the "Merged_Model" produces scores at least 5% better than these models.
+    8.2 Calculate the success score of Model D and check if the success score of the "Merged_Model" is within one standard deviation of this model.
+
+[TR]
+
+1. Modeli eğiteceğimiz verisetini temizlemeliyiz. -> "1.1_VeriTemizleme.py"
+
+2. Model girdisi için verisetini token a çevirmek için "Tokenizer" ı oluşturmalıyız. -> "1.2_Tokenizer.py"
+
+3. Modelin hangi cihazda eğitileceğine göre aşağıdaki adımlar takip edilmeli
+    3.1 Modeli CPU da eğitmek istiyorsanız torch.device("cpu") olarak belirtmeniz yeterli.
+    3.2 Modeli GPU da eğitmek istiyorsanız "cuda" nın ekran kartını desteklediğinden emin olmalısınız ve aşağıdaki aşamaları takip etmelisiniz.
+        3.2 Ekran kartınıza uygun "cudaToolkit" ve "cuDNN" kurulumunu yapmalısınız.
+        3.3 toolkitle uyuşan pyTorch a sahip olduğunuzdan emin olun.
+        3.4 Model eğitim aşamasında torch.device("cuda") olarak belirtmeniz ve hem verisetini hem de modeli "cuda" ya yüklediğinizden emin olun.
+
+4. Proje süreci gereği önce M0 modelini elde etmelisiniz. -> "2_Model_M0.py"
+
+5. Daha sonra M0 modelini initial model olarak kullanıp;
+    5.1 D1 veriseti ile M1 modelini eğitmelisiniz. -> "3.1_Model_M1.py"
+    5.2 D2 veriseti ile M2 modelini eğitmelisiniz. -> "3.2_Model_M2.py"
+
+6. Projenin araştırma konusu olan "Bayes Optimizasyonu" nu gerçekleştirmek için; -> "4_Bayesian_Optimization.py"
+    6.1 M1 ve M2 modellerinden "merged_weight = U*w1 + (1-U)*w2" denklemiyle yeni modeller elde edilir.
+    6.2 Bu modellerin D1Sub, D2Sub verisetleriyle başarı skorları hesaplanır ve en iyi model kaydedilir.
+
+7. Optimizasyonu lineer aramadan alan aramasına çıkarmak için; 
+    7.1 M1 modelini "D2Sub" ile eğiterek "Model A" yı, -> "5.1_Model_A-B-C.py"
+    7.2 M2 modelini "D1Sub" ile eğiterek "Model B" yi, -> "5.1_Model_A-B-C.py"
+    7.3 M0 modelini "D1Sub" + D2Sub" ile eğiterek "Model C" yi, -> "5.1_Model_A-B-C.py"
+    7.4 M1 modelini "D1 + D2" ile eğiterek "Model D" yi elde ederiz. -> "5.2_Model_D.py"
+
+8. Optimizasyon ile elde edilen modelin başarı skorunu yorumlayabilmek için; -> "6_Success_Score_Calculation.py"
+    8.1 M1, M2 ve  A-B-C modellerinin "Top1 - Top5" skorları hesaplanır ve "Merged_Model" in bu modellerden %5 daha başarılı skor üretip üretmediğine bakılır.
+    8.2 Model D nin başarı skoru hesaplanır ve "Merged_Model" in başarı skorunun bu modelden en çok 1 standart sapma kadar düşük olup olmadığına bakılır
