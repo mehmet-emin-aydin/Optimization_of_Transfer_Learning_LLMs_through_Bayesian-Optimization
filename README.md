@@ -43,6 +43,7 @@ This repository contains the code and models for training and deploying multiple
    - Run `5.2_Model_D.py` to train model D.
 5. **Evaluation**: Run `6_Basari_Skoru_Hesaplama.py` to evaluate the models and plot the results.
 
+
 ## Model Configurations
 
 - **M0 Model**: Custom configuration for GPT-2, trained on cleaned Wikipedia data.
