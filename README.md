@@ -32,16 +32,16 @@ This repository contains the code and models for training and deploying multiple
 
 ## Training Steps
 
-1. **Data Cleaning**: Run `1.1_VeriTemizleme.py` to clean and preprocess the dataset.
+1. **Data Cleaning**: Run `1.1_Data_Cleaning.py` to clean and preprocess the dataset.
 2. **Tokenization**: Run `1.2_Tokenizer.py` to create and save the tokenizer.
 3. **Model Training**:
-   - Run `2_M0_Modeli.py` to train the M0 model.
-   - Run `3.1_M1_Modeli.py` to train the M1 model.
-   - Run `3.2_M2_Modeli.py` to train the M2 model.
+   - Run `2_Model_M0.py` to train the M0 model.
+   - Run `3.1_Model_M1.py` to train the M1 model.
+   - Run `3.2_Model_M2.py` to train the M2 model.
 4. **Advanced Model Training**:
    - Run `5.1_Model-A-B-C.py` to train models A, B, and C.
    - Run `5.2_Model_D.py` to train model D.
-5. **Evaluation**: Run `6_Basari_Skoru_Hesaplama.py` to evaluate the models and plot the results.
+5. **Evaluation**: Run `6_Success_Score_Calculation.py` to evaluate the models and plot the results.
 
 
 ## Model Configurations
@@ -75,34 +75,39 @@ To run the project, follow these steps:
     git clone https://github.com/your-username/turkish-language-models.git
     cd turkish-language-models
     ```
-3. Install the required dependencies:
+2. Install the required dependencies:
 
     ```sh
     pip install -r requirements.txt
     ```
-5. Data Cleaning:
+3. Data Cleaning:
 
-   Run 1.1_VeriTemizleme.py to clean and preprocess the dataset:
+   Run 1.1_Data_Cleaning.py to clean and preprocess the dataset:
    ```sh
-   python 1.1_VeriTemizleme.py
+   python 1.1_Data_Cleaning.py
    ```
-7. Tokenization:
+4. Tokenization:
    Run 1.2_Tokenizer.py to create and save the tokenizer:
    ```sh
    python 1.2_Tokenizer.py
    ```
-8. Model Training:
-   Run 2_M0_Modeli.py to train the M0 model:
+5. Model Training:
+   Run 2_Model_M0.py to train the M0 model:
    ```sh
-   python 2_M0_Modeli.py
+   python 2_Model_M0.py
    ```
-   Run 3.1_M1_Modeli.py to train the M1 model:
+   Run 3.1_Model_M1.py to train the M1 model:
    ```sh
-   python 3.1_M1_Modeli.py
+   python 3.1_Model_M1.py
    ```
-   Run 3.2_M2_Modeli.py to train the M2 model:
+   Run 3.2_Model_M2.py to train the M2 model:
    ```sh
-   python 3.2_M2_Modeli.py
+   python 3.2_Model_M2.py
+   ```
+6. Bayesian Optimization:
+   Run 4_Bayesian_Optimization.py to search optimal weights to obtain high success score:
+   ```sh
+   python 4_Bayesian_Optimization.py
    ```
 7. Advanced Model Training:
    Run 5.1_Model-A-B-C.py to train models A, B, and C:
@@ -113,10 +118,10 @@ To run the project, follow these steps:
    ```sh
    python 5.2_Model_D.py
    ```
-7. Evaluation:
-   Run 6_Basari_Skoru_Hesaplama.py to evaluate the models and plot the results:
+8. Evaluation:
+   Run 6_Success_Score_Calculation.py to evaluate the models and plot the results:
    ```sh
-   python 6_Basari_Skoru_Hesaplama.py
+   python 6_Success_Score_Calculation.py
    ```
 
 

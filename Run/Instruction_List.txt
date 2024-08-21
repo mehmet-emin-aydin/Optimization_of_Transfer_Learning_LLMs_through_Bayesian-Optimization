@@ -33,7 +33,7 @@
 
 [TR]
 
-1. Modeli eğiteceğimiz verisetini temizlemeliyiz. -> "1.1_VeriTemizleme.py"
+1. Modeli eğiteceğimiz verisetini temizlemeliyiz. -> "1.1_Data_Cleaning.py"
 
 2. Model girdisi için verisetini token a çevirmek için "Tokenizer" ı oluşturmalıyız. -> "1.2_Tokenizer.py"
 
